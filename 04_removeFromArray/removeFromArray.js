@@ -1,11 +1,12 @@
-const removeFromArray = function(array, toRemove1, toRemove2) {
+const removeFromArray = function(...args) {
     let newArray = []
-    for (let i of array) {
-        if (i === toRemove1 || i === toRemove2) {
+    for (let i of args[0]) {
+        if (args.includes(i)) {
             continue
         }
         else {
-            newArray.push(i)
+            newArray.push(i);
+            continue
         };
     };
     return newArray;
@@ -13,12 +14,3 @@ const removeFromArray = function(array, toRemove1, toRemove2) {
 
 // Do not edit below this line
 module.exports = removeFromArray;
-
-
-// def remove_item(list, item):
-//     new_list = []
-//     for i in list:
-//         if i == item:
-//             continue    
-//         else:
-//             new_list += i
