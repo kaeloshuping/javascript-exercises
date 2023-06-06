@@ -1,5 +1,6 @@
-const add = function() {
-	
+const add = function(...args) {
+  let sum = args.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
+  return sum;
 };
 
 const subtract = function() {
